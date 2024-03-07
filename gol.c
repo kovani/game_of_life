@@ -43,7 +43,7 @@ void update_board() {
 
             for (int y = -1; y <= 1; y++) {
                 for (int x = -1; x <= 1; x++) {
-                    //if (y == 0 && x == 0) continue;
+                    if (y == 0 && x == 0) continue;
 
                     int sosed_Y = i + y;
                     int sosed_X = j + x;
@@ -58,7 +58,7 @@ void update_board() {
                 }
             }
 
-            if (board[i][j] == '$' && (sosed < 2 || sosed > 4))
+            if (board[i][j] == '$' && (sosed < 2 || sosed > 3))
                 next_board[i][j] = '.';
             else if (board[i][j] == '.' && sosed == 3)
                 next_board[i][j] = '$';
